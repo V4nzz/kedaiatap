@@ -377,9 +377,7 @@
   
     /* Menu title mascot */
     .menu-title-mascot {
-      width: 80px;
-      flex-shrink: 0;
-      margin-right: -0.5rem;
+      display: none;
     }
   
     /* Floating mascot lebih kecil */
@@ -396,7 +394,7 @@
     .kon-mascot   { width: 80px; }
     .footer-mascot{ width: 50px; }
     #float-img    { width: 58px; }
-    .menu-title-mascot { width: 72px; }
+    .menu-title-mascot { display: none; }
   }
   
   /* TODAY BADGE */
