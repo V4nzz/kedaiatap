@@ -21,7 +21,7 @@
       }
       *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
       html{scroll-behavior:smooth}
-      body{background:var(--bg);color:var(--black);font-family:'Poppins',sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden;cursor:none}
+      body{background:var(--bg);color:var(--black);font-family:'Poppins',sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden;cursor:none;max-width:100vw}
       ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#141515}
       a{color:inherit;text-decoration:none}img{display:block;width:100%}
   
@@ -280,18 +280,20 @@
   /* HERO — Ozzy besar di pojok kanan atas hero */
   .hero-mascot-wrap {
     position: absolute;
-    bottom: 90px; right: -10px;
+    bottom: 80px; right: 0;
     z-index: 10; pointer-events: none;
+    overflow: hidden;
   }
   .hero-mascot {
-    width: clamp(160px, 22%, 280px);
+    width: clamp(100px, 18%, 220px);
     height: auto;
     animation: hero-float 4s ease-in-out infinite;
     filter: drop-shadow(4px 4px 0 rgba(0,0,0,.3));
+    display: block;
   }
   @keyframes hero-float {
     0%,100% { transform: translateY(0) rotate(-3deg); }
-    50%      { transform: translateY(-16px) rotate(3deg); }
+    50%      { transform: translateY(-14px) rotate(3deg); }
   }
   
   /* MENU PAGE HEADER — Garabot di kanan page header */
@@ -315,8 +317,9 @@
   
   /* FOOTER — Garabot kecil di samping logo */
   .footer-mascot {
-    width: 70px; height: auto;
+    width: 60px; height: auto;
     margin-bottom: .4rem;
+    flex-shrink: 0;
     animation: footer-wiggle 4s ease-in-out infinite;
     filter: drop-shadow(2px 2px 0 rgba(0,0,0,.3));
   }
@@ -327,25 +330,27 @@
   }
   
   /* KOLABORASI — Ozzy di pojok kanan hero */
-  .kol-hero { overflow: hidden; }
+  .kol-hero { overflow: hidden; position: relative; }
   .kol-mascot {
     position: absolute;
-    bottom: 0; right: 2rem;
-    width: clamp(120px, 18vw, 240px);
+    bottom: 0; right: 1rem;
+    width: clamp(80px, 14vw, 200px);
     height: auto;
     animation: kol-pop 3.5s ease-in-out infinite;
     filter: drop-shadow(3px 3px 0 rgba(0,0,0,.25));
     pointer-events: none;
+    max-width: 25vw;
   }
   @keyframes kol-pop {
     0%,100% { transform: translateY(0) scale(1); }
-    50%      { transform: translateY(-14px) scale(1.04); }
+    50%      { transform: translateY(-12px) scale(1.04); }
   }
   
   /* KONTAK — Garabot wave di atas tombol */
   .kon-mascot {
-    width: clamp(100px, 14vw, 160px);
+    width: clamp(80px, 12vw, 140px);
     height: auto;
+    max-width: 140px;
     animation: kon-wave 2.5s ease-in-out infinite;
     filter: drop-shadow(3px 3px 0 rgba(0,0,0,.2));
   }
@@ -357,10 +362,42 @@
   
   /* RESPONSIVE */
   @media(max-width:900px) {
-    .hero-mascot { width: 120px; }
-    .kol-mascot  { width: 100px; right: .5rem; }
-    .kon-mascot  { width: 90px; }
-    #float-img   { width: 70px; }
+    /* Hero mascot — pindah ke bawah, tidak absolute overflow */
+    .hero-mascot-wrap {
+      position: relative;
+      bottom: auto; right: auto;
+      display: flex; justify-content: flex-end;
+      padding: .5rem 1rem 0;
+    }
+    .hero-mascot { width: 100px; }
+  
+    /* Kolaborasi mascot */
+    .kol-mascot { width: 80px; right: .5rem; }
+  
+    /* Kontak mascot */
+    .kon-mascot { width: 75px; }
+  
+    /* Footer mascot */
+    .footer-mascot { width: 48px; }
+  
+    /* Menu title mascot */
+    .menu-title-mascot { width: 70px; }
+  
+    /* Floating mascot lebih kecil */
+    #float-img { width: 60px; }
+    #float-mascot { bottom: 1.2rem; right: 1rem; }
+  
+    /* Pastikan semua section tidak overflow */
+    .h-right, .f-img, .feat, .kol-hero, footer { overflow: hidden; }
+  }
+  
+  @media(max-width:480px) {
+    .hero-mascot { width: 80px; }
+    .kol-mascot  { width: 65px; }
+    .kon-mascot  { display: none; }
+    .footer-mascot { width: 40px; }
+    #float-img   { width: 52px; }
+    .menu-title-mascot { width: 58px; }
   }
   
   /* TODAY BADGE */
