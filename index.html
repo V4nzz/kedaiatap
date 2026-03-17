@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title id="page-title">KEDAI ATAP — Café & Ruang Kolaborasi Jakarta</title>
+  <meta name="description" id="page-desc" content="Kedai Atap — café di Kemang Jakarta Selatan. Kopi specialty, makanan enak, WiFi cepat, dan ruang kolaborasi terbuka."/>
+  <meta name="keywords" content="café jakarta, kopi kemang, specialty coffee, coworking café, kolaborasi"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="cur"></div>
+
+<!-- FLOATING MASCOT -->
+<div id="float-mascot" title="Scroll ke atas">
+  <img src="maskot/ozzy-wave.png" alt="Ozzy" id="float-img"/>
+</div>
+
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="n-logo" data-nav="home">KEDAI<span style="color:#5a3010">.</span>ATAP</a>
+  <div class="n-links">
+    <a href="#home"       class="n-link act" data-nav="home">Home</a>
+    <a href="#menu"       class="n-link" data-nav="menu">Menu</a>
+    <a href="#lokasi"     class="n-link" data-nav="lokasi">Lokasi</a>
+    <a href="#kontak"     class="n-link" data-nav="kontak">Kontak</a>
+    <a href="#kolaborasi" class="n-link" data-nav="kolaborasi">Kolaborasi</a>
+  </div>
+  <div class="n-right"><div class="n-status"><div class="s-dot"></div>Open Now</div></div>
+  <button class="n-ham" id="ham"><div class="ham-ic"><span></span><span></span><span></span></div></button>
+</nav>
+<div class="mob-menu" id="mmenu">
+  <a href="#home"       class="mob-link act" data-nav="home">Home</a>
+  <a href="#menu"       class="mob-link" data-nav="menu">Menu</a>
+  <a href="#lokasi"     class="mob-link" data-nav="lokasi">Lokasi</a>
+  <a href="#kontak"     class="mob-link" data-nav="kontak">Kontak</a>
+  <a href="#kolaborasi" class="mob-link" data-nav="kolaborasi">Kolaborasi</a>
+</div>
+
+<div id="app">
+
+<!-- ══ PAGE: HOME ══ -->
+<div class="pg act" id="pg-home">
+  <section class="hero">
+    <div class="h-left">
+      <p class="eyebrow h-eyebrow">Est. 2022 · Kemang, Jakarta Selatan</p>
+      <h1 class="h-title">KEDAI<br/><em>ATAP</em></h1>
+      <p class="h-tag">Kopi yang jujur. Ruang yang berani.<br/>Percakapan yang tidak basa-basi.</p>
+      <div class="h-cta">
+        <a href="#menu"   class="btn btn-yel" data-nav="menu">Lihat Menu →</a>
+        <a href="#lokasi" class="btn btn-gho" data-nav="lokasi">Kunjungi Kami</a>
+      </div>
+    </div>
+    <div class="h-right" style="position:relative;">
+      <div class="hero-mascot-wrap"><img src="maskot/ozzy-marah.png" alt="Ozzy" class="hero-mascot"/></div>
+      <div class="h-img">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=80" alt="Interior Kedai Atap" loading="eager"/>
+      </div>
+      <div class="h-bar">
+        <div class="h-cell"><div class="lbl">Jam Buka</div><div class="val">08.00 – 22.00</div></div>
+        <div class="h-cell"><div class="lbl">Lokasi</div><div class="val">Kemang Raya</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="t-track" id="ticker"></div></div>
+
+  <div class="pillars">
+    <div class="pillar"><div class="p-num">40+</div><h3>Pilihan Menu</h3><p>Espresso klasik sampai makanan berat yang bikin kenyang seharian.</p></div>
+    <div class="pillar"><div class="p-num">3rd</div><h3>Wave Coffee</h3><p>Single origin, fresh roast setiap minggu. Kami tahu kopi kami dari mana.</p></div>
+    <div class="pillar"><div class="p-num">∞</div><h3>Ruang Kerja</h3><p>WiFi 100mbps, stopkontak banyak, suasana yang bikin produktif.</p></div>
+  </div>
+
+  <div class="feat">
+    <div class="f-text">
+      <p class="eyebrow" style="color:#659941">// Kenapa Kedai Atap?</p>
+      <h2 class="dtitle" style="color:var(--white)">BUKAN SEKADAR<br/>TEMPAT NGOPI.</h2>
+      <p>Kami percaya bahwa café yang baik adalah yang tumbuh bersama komunitasnya. Ruang kami dirancang untuk pekerjaan, kolaborasi, dan percakapan yang bermakna — bukan sekadar konten untuk story.</p>
+      <a href="#kolaborasi" class="btn btn-yel" data-nav="kolaborasi">Open Collaboration →</a>
+    </div>
+    <div class="f-img">
+      <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=700&q=80" alt="Suasana Kedai Atap" loading="lazy"/>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE: MENU ══ -->
+<div class="pg" id="pg-menu">
+  <div class="ph">
+    <div class="ph-num">02</div>
+    <div class="ph-info">
+      <p class="eyebrow">// Apa yang kami sajikan</p>
+      <div style="display:flex;align-items:flex-end;gap:1.5rem;">
+        <h2 class="dtitle">MENU<br/>LENGKAP</h2>
+        <img src="maskot/garabot-angkat.png" alt="Garabot" class="menu-title-mascot"/>
+      </div>
+    </div>
+  </div>
+  <div class="m-filters">
+    <div class="m-filter act" data-f="signature">☕ Coffee Signature</div>
+    <div class="m-filter" data-f="manual">🫗 Manual Brew</div>
+    <div class="m-filter" data-f="milkbased">🥛 Milk Based</div>
+    <div class="m-filter" data-f="makanan">🍽️ Eat Signature</div>
+  </div>
+
+  <!-- COFFEE SIGNATURE -->
+  <div class="m-cat act" id="mc-signature">
+    <div class="m-cat-hdr"><h3>COFFEE SIGNATURE</h3><span>5 Item · Rp 18K – 23K · Tersedia Cold &amp; Hot</span></div>
+    <div class="m-grid">
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Kebouz</span><span class="m-card-price">18K</span></div>
+        <p class="m-card-desc">Espresso + susu + charcoal. Warna gelap, rasa bold yang unik.</p>
+        <div class="badges"><span class="badge b-blk">Signature</span><span class="badge b-grn">Cold / Hot</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Kenau</span><span class="m-card-price">18K</span></div>
+        <p class="m-card-desc">Espresso + gula aren. Manis alami dengan karakter kopi yang kuat.</p>
+        <div class="badges"><span class="badge b-grn">Cold / Hot</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Kenauli</span><span class="m-card-price">20K</span></div>
+        <p class="m-card-desc">Espresso + gula aren + vanilla. Kombinasi klasik yang selalu pas.</p>
+        <div class="badges"><span class="badge b-blk">Best Seller</span><span class="badge b-grn">Cold / Hot</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Kenauli Spes</span><span class="m-card-price">23K</span></div>
+        <p class="m-card-desc">Espresso + gula aren + vanilla + foam. Versi spesial Kenauli dengan topping foam lembut.</p>
+        <div class="badges"><span class="badge b-red">Spesial</span><span class="badge b-grn">Cold / Hot</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Amerinano</span><span class="m-card-price">20K</span></div>
+        <p class="m-card-desc">Espresso + air + flavour pilihan. Americano versi Kedai Atap yang bisa dikustomisasi.</p>
+        <div class="badges"><span class="badge b-grn">Cold / Hot</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANUAL BREW -->
+  <div class="m-cat" id="mc-manual">
+    <div class="m-cat-hdr"><h3>MANUAL BREW</h3><span>3 Item · Mulai 15K · Harga menyesuaikan biji kopi</span></div>
+    <div class="m-grid">
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">V60</span><span class="m-card-price">—</span></div>
+        <p class="m-card-desc">Pour over dengan teknik V60. Harga menyesuaikan pilihan single origin yang tersedia.</p>
+        <div class="badges"><span class="badge b-blk">Ask Barista</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Japanese</span><span class="m-card-price">—</span></div>
+        <p class="m-card-desc">Metode seduh Jepang yang menghasilkan karakter floral dan bersih. Tanya barista untuk detail.</p>
+        <div class="badges"><span class="badge b-blk">Ask Barista</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Vietnam Drip</span><span class="m-card-price">15K</span></div>
+        <p class="m-card-desc">Tetes demi tetes dari saringan khas Vietnam. Bold, pekat, dan nikmat disajikan dingin.</p>
+        <div class="badges"><span class="badge b-grn">Favorit</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILK BASED -->
+  <div class="m-cat" id="mc-milkbased">
+    <div class="m-cat-hdr"><h3>MILK BASED</h3><span>7 Item · Rp 18K – 28K</span></div>
+    <div class="m-grid">
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Matcha</span><span class="m-card-price">25K</span></div>
+        <p class="m-card-desc">Matcha + susu. Pahit yang menyenangkan, creamy yang pas.</p>
+        <div class="badges"><span class="badge b-grn">Popular</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Matcstraw</span><span class="m-card-price">28K</span></div>
+        <p class="m-card-desc">Matcha + strawberry + susu. Perpaduan unik antara pahit matcha dan segarnya stroberi.</p>
+        <div class="badges"><span class="badge b-red">Spesial</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Chocolate</span><span class="m-card-price">18K</span></div>
+        <p class="m-card-desc">Cokelat + susu. Klasik yang selalu bikin nyaman di segala suasana.</p>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Cheesy</span><span class="m-card-price">18K</span></div>
+        <p class="m-card-desc">Keju + susu. Gurih, creamy, dan unexpectedly addictive.</p>
+        <div class="badges"><span class="badge b-blk">Unik</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Cheestraw</span><span class="m-card-price">20K</span></div>
+        <p class="m-card-desc">Keju + strawberry + susu. Kombinasi bold yang bikin penasaran.</p>
+        <div class="badges"><span class="badge b-red">Spesial</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Red Velvet</span><span class="m-card-price">20K</span></div>
+        <p class="m-card-desc">Red velvet + susu. Warna merah cantik, rasa yang lembut dan manis.</p>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Secret Menu</span><span class="m-card-price">—</span></div>
+        <p class="m-card-desc">Menu rahasia yang hanya bisa kamu temukan kalau tanya langsung ke barista kami.</p>
+        <div class="badges"><span class="badge b-blk">Ask Barista</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EAT SIGNATURE -->
+  <div class="m-cat" id="mc-makanan">
+    <div class="m-cat-hdr"><h3>EAT SIGNATURE</h3><span>4 Item · Rp 12K – 15K</span></div>
+    <div class="m-grid">
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Mie Bangladesh</span><span class="m-card-price">15K</span></div>
+        <p class="m-card-desc">Mie dengan bumbu khas ala Kedai Atap. Pedas, gurih, dan mengenyangkan.</p>
+        <div class="badges"><span class="badge b-blk">Best Seller</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Mix Plate</span><span class="m-card-price">15K</span></div>
+        <p class="m-card-desc">Piring campur pilihan dapur. Cocok buat kamu yang lapar tapi bingung mau pesan apa.</p>
+        <div class="badges"><span class="badge b-grn">Rekomendasi</span></div>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Roti Bakar</span><span class="m-card-price">12K</span></div>
+        <p class="m-card-desc">Roti bakar dengan topping pilihan. Simpel, hangat, dan selalu pas ditemani kopi.</p>
+      </div>
+      <div class="m-card">
+        <div class="m-card-top"><span class="m-card-name">Menu Rahasia</span><span class="m-card-price">—</span></div>
+        <p class="m-card-desc">Ada yang tersembunyi di dapur kami. Tanya langsung ke kasir untuk tau hari ini ada apa.</p>
+        <div class="badges"><span class="badge b-red">Misteri</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PAGE: LOKASI ══ -->
+<div class="pg" id="pg-lokasi">
+  <div class="ph">
+    <div class="ph-num">03</div>
+    <div class="ph-info"><p class="eyebrow">// Temukan kami</p><h2 class="dtitle">LOKASI &<br/>JAM BUKA</h2></div>
+  </div>
+  <div class="lok-layout">
+    <div class="lok-info">
+      <div><p class="eyebrow">// Alamat</p><div class="dtitle" style="font-size:2rem;color:var(--white);margin:.5rem 0 1rem">KEDAI ATAP</div></div>
+      <div><div class="ib-label">📍 Alamat Lengkap</div><div class="ib-val">Jl. Kemang Raya No. 18B<br/>Bangka, Mampang Prapatan<br/>Jakarta Selatan 12730</div></div>
+      <div>
+        <div class="ib-label">🕐 Jam Operasional</div>
+        <div class="hr-row" data-day="1"><span class="day">Senin</span><span class="time">10:00 – 23:00 WIB</span></div>
+        <div class="hr-row" data-day="2"><span class="day">Selasa</span><span class="time">10:00 – 23:00 WIB</span></div>
+        <div class="hr-row" data-day="3"><span class="day">Rabu</span><span class="time">10:00 – 23:00 WIB</span></div>
+        <div class="hr-row" data-day="4"><span class="day">Kamis</span><span class="time">10:00 – 23:00 WIB</span></div>
+        <div class="hr-row" data-day="5"><span class="day">Jumat</span><span class="time">10:00 – 23:00 WIB</span></div>
+        <div class="hr-row" data-day="6"><span class="day">Sabtu</span><span class="time">10:00 – 00:00 WIB</span></div>
+        <div class="hr-row" data-day="0"><span class="day">Minggu</span><span class="time">10:00 – 00:00 WIB</span></div>
+      </div>
+      <div><div class="ib-label">📞 Hubungi Kami</div><div class="ib-val">+62 812-3456-7890<br/><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="274f424b4b48674c48574e4555520953464b">[email&#160;protected]</a></div></div>
+      <a href="https://www.google.com/maps?q=-5.366425867462228,105.24930840857814" target="_blank" class="btn btn-yel" style="align-self:flex-start">Buka Google Maps ↗</a>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966!2d105.24930840857814!3d-5.366425867462228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zLTUuMzY2NCwxMDUuMjQ5Mw!5e0!3m2!1sid!2sid!4v1709880000001" allowfullscreen="" loading="lazy" title="Lokasi Kedai Atap"></iframe>
+    </div>
+  </div>
+  <div class="lok-extras">
+    <div class="lok-extra"><div class="lok-extra-ico">🚗</div><h4>Parkir</h4><p>Tersedia parkir mobil dan motor luas di depan dan samping bangunan.</p></div>
+    <div class="lok-extra"><div class="lok-extra-ico">🚇</div><h4>Transportasi Umum</h4><p>10 menit dari MRT Blok M. Shelter ojol tersedia di depan pintu masuk.</p></div>
+    <div class="lok-extra"><div class="lok-extra-ico">♿</div><h4>Aksesibilitas</h4><p>Ramah kursi roda. Tersedia ramp dan toilet berkebutuhan khusus.</p></div>
+  </div>
+</div>
+
+<!-- ══ PAGE: KONTAK ══ -->
+<div class="pg" id="pg-kontak">
+  <div class="kon-hero">
+    <div>
+      <p class="eyebrow" style="color:#D7792B">// Hubungi kami</p>
+      <h2 class="dtitle" style="color:var(--white)">AYO<br/>NGOBROL.</h2>
+      <p>Punya pertanyaan soal menu, reservasi, atau sekadar ingin tahu jam buka? Kami selalu siap membalas dengan cepat.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0"><img src="maskot/garabot-wave.png" alt="Garabot" class="kon-mascot"/><div class="kon-btns">
+      <a href="https://wa.me/6281234567890?text=Halo%20Kopi%20Brutal!" target="_blank" class="btn" style="background:#25D366;border-color:var(--black);color:var(--black);justify-content:center;padding:1.1rem 2rem">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.558 4.143 1.538 5.883L.057 23.321a.75.75 0 0 0 .92.92l5.438-1.481A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.956 9.956 0 0 1-5.206-1.463l-.374-.222-3.876 1.056 1.056-3.876-.222-.374A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Chat di WhatsApp
+      </a>
+      <a href="https://instagram.com/kedaiatap" target="_blank" class="btn btn-blk" style="justify-content:center;padding:1.1rem 2rem">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98C23.986 15.668 24 15.259 24 12c0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        Follow @kedaiatap
+      </a>
+    </div>
+    </div>
+  </div>
+  <div class="kon-channels">
+    <div class="kon-ch">
+      <div class="ch-ico">💬</div>
+      <div><div class="ch-name">WHATSAPP</div><div class="ch-handle">+62 812-3456-7890</div></div>
+      <p class="ch-desc">Untuk reservasi meja, pertanyaan menu, atau pesanan catering. Aktif setiap hari selama jam buka.</p>
+      <a href="https://wa.me/6281234567890" target="_blank" class="btn btn-blk" style="align-self:flex-start">Mulai Chat →</a>
+    </div>
+    <div class="kon-ch">
+      <div class="ch-ico">📸</div>
+      <div><div class="ch-name">INSTAGRAM</div><div class="ch-handle">@kedaiatap</div></div>
+      <p class="ch-desc">Lihat foto menu terbaru, update event, dan behind-the-scenes dapur kami setiap harinya.</p>
+      <a href="https://instagram.com/kedaiatap" target="_blank" class="btn btn-blk" style="align-self:flex-start">Buka Instagram →</a>
+    </div>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-hdr"><h3>PERTANYAAN YANG SERING DITANYAKAN</h3></div>
+    <div class="faq-item"><div class="faq-q">Apakah bisa reservasi tempat duduk? <span class="faq-ico">+</span></div><div class="faq-a"><p>Ya, bisa. Hubungi kami via WhatsApp minimal 2 jam sebelumnya. Untuk grup 10+ orang, disarankan reservasi H-1.</p></div></div>
+    <div class="faq-item"><div class="faq-q">Apakah ada fasilitas meeting room? <span class="faq-ico">+</span></div><div class="faq-a"><p>Tersedia 1 ruang meeting untuk kapasitas 8 orang, bisa disewa per jam. Hubungi kami untuk ketersediaan dan harga.</p></div></div>
+    <div class="faq-item"><div class="faq-q">Apakah menerima custom order atau catering? <span class="faq-ico">+</span></div><div class="faq-a"><p>Ya! Kami menerima pesanan catering untuk acara perusahaan dan komunitas. Minimum pesanan 20 pax, pemesanan H-3.</p></div></div>
+    <div class="faq-item"><div class="faq-q">Metode pembayaran apa saja yang diterima? <span class="faq-ico">+</span></div><div class="faq-a"><p>Tunai, semua kartu debit/kredit, QRIS, GoPay, OVO, Dana, dan ShopeePay. Tidak ada minimum pembelian untuk digital.</p></div></div>
+  </div>
+</div>
+
+<!-- ══ PAGE: KOLABORASI ══ -->
+<div class="pg" id="pg-kolaborasi">
+  <div class="kol-hero">
+    <div class="kol-bg">KOLABORASI KOLABORASI KOLABORASI KOLABORASI</div>
+    <img src="maskot/ozzy-cute.png" alt="Ozzy" class="kol-mascot"/>
+    <div class="kol-content">
+      <p class="eyebrow" style="color:#D7792B">// Open Collaboration</p>
+      <h2 class="dtitle">BANGUN<br/>SESUATU<br/>BERSAMA.</h2>
+      <p>Kedai Atap bukan sekadar tempat ngopi. Kami percaya ruang yang baik tumbuh bersama komunitasnya. Punya ide, brand, atau proyek yang ingin berkolaborasi? Kami sangat terbuka.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-GANTI-ID-FORM-KAMU/viewform" target="_blank" class="btn btn-yel" style="font-size:.88rem;padding:1rem 2.5rem">Ajukan Kolaborasi →</a>
+    </div>
+  </div>
+  <div class="kol-types">
+    <div class="kol-type"><div class="kol-type-ico">☕</div><h3>Pop-up Event</h3><p>Jadikan café kami sebagai venue pop-up brand atau event komunitas kamu.</p></div>
+    <div class="kol-type"><div class="kol-type-ico">📸</div><h3>Photo & Video Shoot</h3><p>Ruang estetik yang siap jadi backdrop konten brand dan campaign kamu.</p></div>
+    <div class="kol-type"><div class="kol-type-ico">🎵</div><h3>Live Music</h3><p>Pentas akustik atau live performance setiap akhir pekan. Terbuka untuk semua genre.</p></div>
+    <div class="kol-type"><div class="kol-type-ico">🖼️</div><h3>Art Exhibition</h3><p>Dinding kami terbuka untuk karya seni lokal — lukisan, fotografi, atau instalasi.</p></div>
+    <div class="kol-type"><div class="kol-type-ico">📦</div><h3>Brand Activation</h3><p>Reach audiens loyal kami melalui sampling, giveaway, atau brand activation.</p></div>
+    <div class="kol-type"><div class="kol-type-ico">💼</div><h3>Workshop & Seminar</h3><p>Sewa ruang untuk workshop, seminar kecil, atau kelas komunitas kamu.</p></div>
+    <div class="kol-type"><div class="kol-type-ico">✍️</div><h3>Komunitas & Diskusi</h3><p>Book club, forum diskusi, atau kopdar komunitas — kami siap jadi homebase.</p></div>
+    <div class="kol-type"><div class="kol-type-ico">🤝</div><h3>Collab Menu</h3><p>Co-create menu spesial bersama brand F&B atau produk lokal Indonesia.</p></div>
+  </div>
+  <div class="kol-cta">
+    <div>
+      <h3>SIAP MULAI<br/>KOLABORASI?</h3>
+      <p>Isi formulir singkat kami dan tim Kedai Atap akan menghubungi kamu dalam 1×24 jam. Tidak ada proposal ribet — cukup ceritakan ide kamu.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-GANTI-ID-FORM-KAMU/viewform" target="_blank" class="btn btn-blk" style="margin-top:1.5rem">Buka Formulir ↗</a>
+    </div>
+    <div class="kol-steps">
+      <div class="kol-step"><div class="kol-snum">01</div><div class="kol-stxt"><strong>Isi Formulir</strong><span>Ceritakan ide dan jenis kolaborasi yang kamu bayangkan.</span></div></div>
+      <div class="kol-step"><div class="kol-snum">02</div><div class="kol-stxt"><strong>Kami Menghubungi</strong><span>Tim kami akan balas dalam 1×24 jam untuk diskusi awal.</span></div></div>
+      <div class="kol-step"><div class="kol-snum">03</div><div class="kol-stxt"><strong>Wujudkan Bersama</strong><span>Sepakati detail, jadwal, dan mulai kolaborasi!</span></div></div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /app -->
+
+<footer>
+  <div class="ft-col">
+    <div style="display:flex;align-items:flex-end;gap:1rem;margin-bottom:.5rem"><div class="ft-logo">KEDAI<br/>ATAP</div><img src="maskot/garabot-senyum.png" alt="Garabot" class="footer-mascot"/></div>
+    <div class="ft-sub">Kemang · Jakarta Selatan · Since 2022</div>
+    <div class="ft-copy">© 2024 Kedai Atap. All rights reserved.</div>
+  </div>
+  <div class="ft-col">
+    <h4>Navigasi</h4>
+    <ul class="ft-links">
+      <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#menu" data-nav="menu">Menu</a></li>
+      <li><a href="#lokasi" data-nav="lokasi">Lokasi & Jam Buka</a></li>
+      <li><a href="#kontak" data-nav="kontak">Kontak</a></li>
+      <li><a href="#kolaborasi" data-nav="kolaborasi">Kolaborasi</a></li>
+    </ul>
+  </div>
+  <div class="ft-col">
+    <h4>Kontak</h4>
+    <ul class="ft-links">
+      <li><a href="https://wa.me/6281234567890" target="_blank">WhatsApp: +62 812-3456-7890</a></li>
+      <li><a href="https://instagram.com/kedaiatap" target="_blank">Instagram: @kedaiatap</a></li>
+      <li><a>Jl. Kemang Raya No. 18B, Jaksel</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // PAGE META
+  const META = {
+    home:       {t:'KEDAI ATAP — Café & Ruang Kolaborasi Jakarta',d:'Kopi specialty di Kemang Jakarta Selatan. Kopi yang jujur, ruang yang berani.'},
+    menu:       {t:'Menu — KEDAI ATAP',d:'Menu lengkap Kedai Atap: kopi specialty, non-kopi, makanan, dan cemilan.'},
+    lokasi:     {t:'Lokasi & Jam Buka — KEDAI ATAP',d:'Temukan Kedai Atap di Kemang Raya No. 18B, Jakarta Selatan. Buka setiap hari.'},
+    kontak:     {t:'Kontak — KEDAI ATAP',d:'Hubungi Kedai Atap via WhatsApp atau Instagram untuk reservasi dan pertanyaan.'},
+    kolaborasi: {t:'Kolaborasi — KEDAI ATAP',d:'Open collaboration: pop-up event, art exhibition, live music, workshop, dan banyak lagi.'}
+  };
+
+  function navigate(id, push=true) {
+    if (!document.getElementById('pg-'+id)) return;
+    document.querySelectorAll('.pg').forEach(p=>p.classList.remove('act'));
+    document.getElementById('pg-'+id).classList.add('act');
+    document.querySelectorAll('[data-nav]').forEach(el=>el.classList.toggle('act', el.dataset.nav===id));
+    const m=META[id]||META.home;
+    document.getElementById('page-title').textContent=m.t;
+    document.getElementById('page-desc').content=m.d;
+    if(push) history.pushState({page:id},m.t,'#'+id);
+    window.scrollTo({top:0,behavior:'smooth'});
+    closeMob();
+  }
+
+  document.addEventListener('click',e=>{
+    const el=e.target.closest('[data-nav]');
+    if(el){e.preventDefault();navigate(el.dataset.nav)}
+  });
+  window.addEventListener('popstate',e=>navigate((e.state&&e.state.page)||'home',false));
+  navigate((location.hash.replace('#','')||'home'),false);
+
+  // AUTO-HIGHLIGHT hari ini di jam operasional
+  (function(){
+    const today = new Date().getDay(); // 0=Minggu, 1=Sen, ..., 6=Sab
+    const row = document.querySelector(`.hr-row[data-day="${today}"]`);
+    if(row){
+      row.classList.add('today');
+      const timeEl = row.querySelector('.time');
+      if(timeEl) timeEl.insertAdjacentHTML('afterend','<span class="today-badge">◀ Hari ini</span>');
+    }
+  })();
+
+  // TICKER
+  const TI=['☕ Kopi Segar Setiap Hari','⚡ WiFi 100Mbps','🔌 Banyak Stopkontak','🎵 Playlist Tidak Annoying','📦 Open Collaboration','🌱 Bahan Lokal Pilihan','☕ Kopi Segar Setiap Hari','⚡ WiFi 100Mbps','🔌 Banyak Stopkontak','🎵 Playlist Tidak Annoying','📦 Open Collaboration','🌱 Bahan Lokal Pilihan'];
+  document.getElementById('ticker').innerHTML=TI.map(t=>`<span class="t-item">${t}<span class="t-sep"> ✦ </span></span>`).join('');
+
+  // MENU FILTERS
+  document.querySelectorAll('.m-filter').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.m-filter').forEach(x=>x.classList.remove('act'));
+      document.querySelectorAll('.m-cat').forEach(x=>x.classList.remove('act'));
+      b.classList.add('act');
+      document.getElementById('mc-'+b.dataset.f).classList.add('act');
+    });
+  });
+
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const o=q.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));
+      document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
+      if(!o){q.classList.add('open');q.nextElementSibling.classList.add('open')}
+    });
+  });
+
+  // HAMBURGER
+  function closeMob(){document.getElementById('mmenu').classList.remove('open')}
+  document.getElementById('ham').addEventListener('click',()=>document.getElementById('mmenu').classList.toggle('open'));
+
+  // CURSOR
+  const cur=document.getElementById('cur');
+  document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+  document.querySelectorAll('a,button,[data-nav],.m-filter,.faq-q,.pillar,.m-card,.kol-type,.lok-extra,.kon-ch').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cur.classList.add('h'));
+    el.addEventListener('mouseleave',()=>cur.classList.remove('h'));
+  });
+
+  // FLOATING MASCOT — scroll to top + swap pose on hover
+  const floatMascot = document.getElementById('float-mascot');
+  const floatImg    = document.getElementById('float-img');
+  const poses = ['maskot/ozzy-wave.png','maskot/ozzy-cute.png','maskot/ozzy-ngantuk.png'];
+  let poseIdx = 0;
+  floatMascot.addEventListener('click', () => {
+    window.scrollTo({top:0, behavior:'smooth'});
+    document.getElementById('app').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  floatMascot.addEventListener('mouseenter', () => {
+    poseIdx = (poseIdx + 1) % poses.length;
+    floatImg.style.opacity = '0';
+    setTimeout(() => { floatImg.src = poses[poseIdx]; floatImg.style.opacity = '1'; }, 150);
+  });
+  floatImg.style.transition = 'opacity .15s';
+
+  // Swap menu mascot pose when switching tabs
+  document.querySelectorAll('.m-filter').forEach((btn,i) => {
+    const menuPoses = ['maskot/garabot-angkat.png','maskot/garabot-senyum.png','maskot/garabot-kesal.png','maskot/garabot-serius.png'];
+    btn.addEventListener('click', () => {
+      const mi = document.querySelector('.ph-mascot-img');
+      if(mi){ mi.style.opacity='0'; setTimeout(()=>{ mi.src=menuPoses[i%menuPoses.length]; mi.style.opacity='1'; },150); mi.style.transition='opacity .15s'; }
+    });
+  });
+</script>
+</body>
+</html>
