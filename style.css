@@ -88,6 +88,15 @@
       .h-left::before{content:'KB';position:absolute;right:-1rem;bottom:-2rem;font-family:'New Year Coffee',sans-serif;font-size:22vw;line-height:1;color:rgba(255,255,255,.04);pointer-events:none}
       .h-eyebrow{color:var(--yellow)}
       .h-title{font-family:'New Year Coffee',sans-serif;font-size:clamp(5rem,10vw,9rem);line-height:.88;letter-spacing:.01em;color:var(--white);margin:1.5rem 0}
+  .h-title-logo {
+    margin: 1.5rem 0;
+    width: clamp(240px, 55%, 480px);
+  }
+  .h-title-logo svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
       .h-title em{color:var(--yellow);font-style:normal}
       .h-tag{font-family:'Poppins',sans-serif;font-size:.86rem;color:#8a9aa8;line-height:1.8;margin-bottom:3rem;max-width:380px}
       .h-cta{display:flex;gap:1rem;flex-wrap:wrap}
@@ -410,21 +419,26 @@
   
   /* ── LOGO SVG ── */
   .nav-logo-img {
+    display: flex;
+    align-items: center;
+  }
+  .nav-logo-img svg {
     height: 32px;
     width: auto;
     display: block;
-    object-fit: contain;
   }
   
   .footer-logo-img {
+    display: block;
+    margin-bottom: .4rem;
+  }
+  .footer-logo-img svg {
     height: 60px;
     width: auto;
     display: block;
-    object-fit: contain;
-    margin-bottom: .4rem;
   }
   
   @media(max-width:900px) {
-    .nav-logo-img { height: 26px; }
-    .footer-logo-img { height: 48px; }
+    .nav-logo-img svg  { height: 26px; }
+    .footer-logo-img svg { height: 48px; }
   }
