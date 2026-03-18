@@ -85,7 +85,7 @@
       /* ── HOME ── */
       .hero{display:grid;grid-template-columns:55% 45%;min-height:calc(100vh - var(--nav-h));border-bottom:var(--border)}
       .h-left{background:var(--black);padding:5rem 4rem;display:flex;flex-direction:column;justify-content:center;border-right:var(--border);position:relative;overflow:hidden}
-      .h-left::before{content:'KB';position:absolute;right:-1rem;bottom:-2rem;font-family:'New Year Coffee',sans-serif;font-size:22vw;line-height:1;color:rgba(255,255,255,.04);pointer-events:none}
+      .h-left::before{content:'KA';position:absolute;right:-1rem;bottom:-2rem;font-family:'New Year Coffee',sans-serif;font-size:22vw;line-height:1;color:rgba(255,255,255,.04);pointer-events:none}
       .h-eyebrow{color:var(--yellow)}
       .h-title{font-family:'New Year Coffee',sans-serif;font-size:clamp(5rem,10vw,9rem);line-height:.88;letter-spacing:.01em;color:var(--white);margin:1.5rem 0}
   .h-title-logo {
