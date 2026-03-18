@@ -407,3 +407,24 @@
     margin-left: .5rem;
     animation: pulse 2s infinite;
   }
+  
+  /* ── LOGO SVG ── */
+  .nav-logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+  }
+  
+  .footer-logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    margin-bottom: .4rem;
+  }
+  
+  @media(max-width:900px) {
+    .nav-logo-img { height: 26px; }
+    .footer-logo-img { height: 48px; }
+  }
