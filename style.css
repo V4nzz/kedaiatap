@@ -162,7 +162,7 @@
       .hr-row .day{color:#6a7580;font-family:'Poppins',sans-serif;font-size:.7rem}
       .hr-row .time{color:var(--white)}
       .hr-row.today .day,.hr-row.today .time{color:var(--green);font-weight:700}
-      .hr-row.today .time::after{content:'◀ Hari ini';font: size 0.6em;rem;display:inline-block;margin-left:.6rem;animation:badge-fade 2s ease-in-out infinite}
+      .hr-row.today .time::after{content:'◀ Hari ini';font-size:.6rem;display:inline-block;margin-left:.6rem;animation:badge-fade 2s ease-in-out infinite}
       .map-wrap{position:relative;min-height:520px}
       .map-wrap iframe{width:100%;height:100%;border:none;display:block;min-height:520px}
       .lok-extras{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:var(--border)}
