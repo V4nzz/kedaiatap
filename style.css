@@ -443,3 +443,229 @@
     .nav-logo-img svg  { height: 26px; }
     .footer-logo-img svg { height: 48px; }
   }
+
+  /* ── ARTIKEL ── */
+  .art-filters {
+    display: flex;
+    border-bottom: var(--border);
+    background: var(--black);
+    overflow-x: auto;
+    gap: 0;
+  }
+  .art-filter {
+    padding: 1.1rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #6a7580;
+    border-right: 2px solid #252525;
+    cursor: none;
+    white-space: nowrap;
+    transition: color var(--ease), background var(--ease);
+  }
+  .art-filter:hover { color: var(--white); background: #1e2020; }
+  .art-filter.act { background: var(--yellow); color: var(--black); }
+
+  .art-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: var(--border);
+  }
+  .art-card {
+    border-right: var(--border);
+    border-bottom: var(--border);
+    display: flex;
+    flex-direction: column;
+    cursor: none;
+    transition: background var(--ease), transform .15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .art-card:hover { background: var(--yellow); }
+  .art-card:hover .art-card-excerpt { color: #333; }
+  .art-card:hover .art-read { color: var(--black); }
+  .art-card:nth-child(3n) { border-right: none; }
+  .art-card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: var(--border);
+    flex-shrink: 0;
+  }
+  .art-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+  }
+  .art-card:hover .art-card-img img { transform: scale(1.05); }
+  .art-card-body {
+    padding: 1.8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    flex: 1;
+  }
+  .art-card-meta {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    flex-wrap: wrap;
+  }
+  .art-tag {
+    font-family: 'Poppins', sans-serif;
+    font-size: .58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    padding: .18rem .6rem;
+    border: 1.5px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+  }
+  .art-card:hover .art-tag { background: var(--bg); color: var(--black); }
+  .art-date {
+    font-family: 'Poppins', sans-serif;
+    font-size: .6rem;
+    color: #6a7580;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+  .art-card-title {
+    font-family: 'New Year Coffee', sans-serif;
+    font-size: 1.45rem;
+    line-height: 1.1;
+    letter-spacing: .02em;
+  }
+  .art-card-excerpt {
+    font-size: .8rem;
+    color: #4E5861;
+    line-height: 1.75;
+    flex: 1;
+  }
+  .art-read {
+    font-family: 'Poppins', sans-serif;
+    font-size: .68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--orange);
+    margin-top: auto;
+    transition: color var(--ease);
+  }
+
+  /* ARTIKEL OVERLAY */
+  .art-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .75);
+    z-index: 1100;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s;
+    overflow-y: auto;
+  }
+  .art-overlay.open { opacity: 1; pointer-events: all; }
+  .art-detail {
+    background: var(--bg);
+    border: var(--border);
+    box-shadow: var(--shadow-lg);
+    max-width: 760px;
+    width: 100%;
+    position: relative;
+    transform: translateY(30px);
+    transition: transform .3s ease;
+    margin: auto;
+    overflow-y: auto;
+    max-height: 90vh;
+  }
+  .art-overlay.open .art-detail { transform: translateY(0); }
+  .art-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    width: 44px;
+    height: 44px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    font-size: 1.2rem;
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background var(--ease);
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .art-close:hover { background: var(--red); }
+  .art-detail-inner { display: flex; flex-direction: column; }
+  .art-detail-banner {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-bottom: var(--border);
+    flex-shrink: 0;
+  }
+  .art-detail-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .art-detail-content { padding: 2.5rem 3rem; }
+  .art-detail-meta {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    margin-bottom: 1.2rem;
+  }
+  .art-detail-title {
+    font-family: 'New Year Coffee', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.05;
+    letter-spacing: .02em;
+    margin-bottom: 2rem;
+    border-bottom: var(--border);
+    padding-bottom: 1.5rem;
+  }
+  .art-detail-body { font-size: .9rem; line-height: 1.9; color: #2a2a2a; }
+  .art-detail-body h3 {
+    font-family: 'New Year Coffee', sans-serif;
+    font-size: 1.5rem;
+    margin: 2rem 0 .6rem;
+    letter-spacing: .02em;
+  }
+  .art-detail-body p { margin-bottom: 1.2rem; }
+  .art-detail-body ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+  }
+  .art-detail-body li { font-size: .88rem; }
+  .art-detail-body strong { font-weight: 800; }
+  .art-detail-body em { font-style: italic; color: var(--orange); }
+
+  /* Responsive Artikel */
+  @media(max-width:900px) {
+    .art-grid { grid-template-columns: 1fr; }
+    .art-card { border-right: none; }
+    .art-card:nth-child(3n) { border-right: none; }
+    .art-filter { cursor: auto; }
+    .art-card { cursor: auto; }
+    .art-detail-content { padding: 2rem 1.5rem; }
+    .art-close { cursor: auto; }
+  }
+  @media(min-width:601px) and (max-width:900px) {
+    .art-grid { grid-template-columns: repeat(2, 1fr); }
+    .art-card:nth-child(2n) { border-right: none; }
+    .art-card:nth-child(3n) { border-right: var(--border); }
+  }
