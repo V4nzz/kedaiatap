@@ -750,19 +750,17 @@
       artikel: { t: 'Artikel & Cerita — KEDAI ATAP', d: 'Baca cerita, tips, dan inspirasi dari dapur dan ruang Kedai Atap.' }
     };
 
-    // OPEN/CLOSED STATUS (WIB = UTC+7)
+    // OPEN/CLOSED STATUS (WIB = Asia/Jakarta)
     function updateOpenStatus() {
       const now = new Date();
-      const wib = new Date(now.getTime() + (7 * 60 - now.getTimezoneOffset()) * 60000);
+      // Konversi ke WIB menggunakan Intl API — akurat di semua browser
+      const wib = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Jakarta' }));
       const day = wib.getDay(); // 0=Minggu, 6=Sabtu
-      const h = wib.getHours();
-      const m = wib.getMinutes();
-      const mins = h * 60 + m;
-      // Sabtu(6) & Minggu(0): 10:00 - 00:00 (malam = 23:59 max)
-      // Senin(1)-Jumat(5): 10:00 - 23:00
-      const open = 10 * 60; // 10:00
-      const close = (day === 0 || day === 6) ? 24 * 60 : 23 * 60; // 00:00 atau 23:00
-      const isOpen = mins >= open && mins < close;
+      const mins = wib.getHours() * 60 + wib.getMinutes();
+      // Senin(1)-Jumat(5): 10:00 - 23:00 | Sabtu(6) & Minggu(0): 10:00 - 00:00
+      const openMins = 10 * 60;
+      const closeMins = (day === 0 || day === 6) ? 24 * 60 : 23 * 60;
+      const isOpen = mins >= openMins && mins < closeMins;
       const statusEl = document.getElementById('op-status');
       const textEl = document.getElementById('op-text');
       if (!statusEl || !textEl) return;
