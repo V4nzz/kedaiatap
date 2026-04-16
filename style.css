@@ -103,9 +103,9 @@
       .h-title em{color:var(--yellow);font-style:normal}
       .h-tag{font-family:'Poppins',sans-serif;font-size:.86rem;color:#8a9aa8;line-height:1.8;margin-bottom:3rem;max-width:380px}
       .h-cta{display:flex;gap:1rem;flex-wrap:wrap}
-      .h-right{display:grid;grid-template-rows:1fr auto;background:#1e2020}
-      .h-img{overflow:hidden;position:relative}
-      .h-img img{height:100%;object-fit:cover;filter:contrast(1.1) saturate(.9);transition:transform 6s ease}
+      .h-right{display:grid;grid-template-rows:1fr auto;background:#1e2020;max-height:calc(100vh - var(--nav-h))}
+      .h-img{overflow:hidden;position:relative;min-height:360px}
+      .h-img img{width:100%;height:100%;max-height:620px;object-fit:cover;object-position:center top;filter:contrast(1.1) saturate(.9);transition:transform 6s ease;display:block}
       .h-img:hover img{transform:scale(1.04)}
       .h-bar{background:var(--yellow);border-top:var(--border);display:grid;grid-template-columns:1fr 1fr}
       .h-cell{padding:1.2rem 1.5rem;border-right:var(--border)}
@@ -128,8 +128,8 @@
       .f-text .eyebrow{color:var(--orange)}
       .f-text .dtitle{font-size:clamp(2.2rem,3.5vw,3.5rem);color:var(--white);margin:1rem 0 1.5rem}
       .f-text p{font-size:.88rem;color:#8a9aa8;line-height:1.9;margin-bottom:2.5rem}
-      .f-img{overflow:hidden;min-height:380px}
-      .f-img img{height:100%;object-fit:cover;filter:grayscale(15%)}
+      .f-img{overflow:hidden;min-height:360px;max-height:520px}
+      .f-img img{width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(15%);display:block}
   
       /* ── MENU ── */
       .m-filters{display:flex;border-bottom:var(--border);background:var(--black);overflow-x:auto}
@@ -244,11 +244,12 @@
         .hero{grid-template-columns:1fr;min-height:auto}
         .h-left{padding:3rem 1.5rem;border-right:none;border-bottom:var(--border)}
         .h-left::before{display:none}
-        .h-right{min-height:280px}
+        .h-right{min-height:300px;max-height:400px}
+        .h-img img{max-height:400px;object-position:center 30%}
         .pillars{grid-template-columns:1fr}.pillar{border-right:none}
         .feat{grid-template-columns:1fr}
         .f-text{padding:3rem 1.5rem;border-right:none;border-bottom:var(--border)}
-        .f-img{min-height:220px}
+        .f-img{min-height:260px;max-height:340px}
         .ph-num{font-size:3.5rem;padding:.5rem 1.5rem}
         .ph-info{padding:1.5rem}
         .m-cat-hdr{padding:1.5rem}
