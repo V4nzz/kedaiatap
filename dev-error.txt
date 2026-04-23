@@ -1,0 +1,53 @@
+﻿node.exe : D:\kedai-ata
+p-2\node_modules\next\d
+ist\server\config.js:80
+0
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (D:\kedai-atap   
+ -2...r\config.js:8    
+00:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+            throw new 
+Error(`Configuring 
+Next.js via '${(0, _pat
+h.basename)(nonJsPath)}
+' is not supported. 
+Please replace the 
+file with 
+'next.config.js' or 
+'next.config.mjs'.`);
+                  ^
+
+Error: Configuring 
+Next.js via 
+'next.config.ts' is 
+not supported. Please 
+replace the file with 
+'next.config.js' or 
+'next.config.mjs'.
+    at loadConfig (D:\k
+edai-atap-2\node_module
+s\next\dist\server\conf
+ig.js:800:19)
+    at async 
+Module.nextDev (D:\keda
+i-atap-2\node_modules\n
+ext\dist\cli\next-dev.j
+s:175:14)
+
+Node.js v24.11.0
