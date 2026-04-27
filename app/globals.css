@@ -34,7 +34,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--black);
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-poppins, 'Poppins'), sans-serif;
   font-size: 16px;
   line-height: 1.5;
   overflow-x: hidden;
@@ -107,17 +107,19 @@ img { display: block; width: 100%; }
   width: 16px;
   height: 16px;
   /* Menggunakan oren brand Kedai Atap dengan Glow */
-  background: rgba(215, 121, 43, 0.85); 
+  background: rgba(215, 121, 43, 0.85);
   border: 2px solid var(--black);
-  box-shadow: 0 0 10px rgba(215, 121, 43, 0.6); 
+  box-shadow: 0 0 10px rgba(215, 121, 43, 0.6);
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
+  /* Offset dihitung di JS (-8px), tidak perlu translate(-50%, -50%) */
+  /* will-change agar browser aktifkan GPU compositing untuk cursor */
+  will-change: transform;
   transition: width 0.15s, height 0.15s, background 0.15s;
 }
-#cur.h { 
-  width: 38px; 
-  height: 38px; 
+#cur.h {
+  width: 38px;
+  height: 38px;
   background: rgba(215, 121, 43, 0.95);
   box-shadow: 0 0 20px rgba(215, 121, 43, 0.8);
 }
@@ -259,7 +261,8 @@ nav.main-nav {
 .h-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
 .h-right { display: grid; grid-template-rows: 1fr auto; background: #1e2020; }
 .h-img { overflow: hidden; position: relative; min-height: 360px; }
-.h-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.1) saturate(0.9); transition: transform 6s ease; display: block; }
+.h-img img, .h-img span { width: 100% !important; height: 100% !important; }
+.h-img img { object-fit: cover; object-position: center top; filter: contrast(1.1) saturate(0.9); transition: transform 6s ease; display: block; }
 .h-img:hover img { transform: scale(1.04); }
 .h-bar { background: var(--yellow); border-top: var(--border); display: grid; grid-template-columns: 1fr 1fr; }
 .h-cell { padding: 1.2rem 1.5rem; border-right: var(--border); }
@@ -282,7 +285,7 @@ nav.main-nav {
 .f-text .eyebrow { color: var(--orange); }
 .f-text .dtitle { font-size: clamp(2.2rem, 3.5vw, 3.5rem); color: var(--white); margin: 1rem 0 1.5rem; }
 .f-text p { font-size: 0.88rem; color: #8a9aa8; line-height: 1.9; margin-bottom: 2.5rem; }
-.f-img { overflow: hidden; min-height: 360px; max-height: 520px; }
+.f-img { overflow: hidden; min-height: 360px; max-height: 520px; position: relative; }
 .f-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: grayscale(15%); display: block; }
 
 /* ── MENU ── */

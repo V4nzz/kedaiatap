@@ -1,12 +1,19 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, lazy, Suspense } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingMascot from "@/components/FloatingMascot";
-import CustomCursor from "@/components/CustomCursor";
 import { Article, FALLBACK_ARTICLES, CATEGORY_LABELS } from "@/lib/types";
-import NavLogoSVG from "@/components/NavLogoSVG";
 import HeroLogoSVG from "@/components/HeroLogoSVG";
+
+// Lazy-load komponen berat yang tidak dibutuhkan saat first render
+const CustomCursor = dynamic(() => import("@/components/CustomCursor"), {
+  ssr: false,
+});
+const FloatingMascot = dynamic(() => import("@/components/FloatingMascot"), {
+  ssr: false,
+});
 
 // ─── Page META ───────────────────────────────────────────────────────────────
 const PAGE_META: Record<string, { t: string; d: string }> = {
@@ -45,13 +52,28 @@ function SectionHome({ onNavigate }: { onNavigate: (p: string) => void }) {
             <a href="#menu" className="btn btn-yel" onClick={(e) => { e.preventDefault(); onNavigate("menu"); }}>Lihat Menu →</a>
             <a href="#lokasi" className="btn btn-gho" onClick={(e) => { e.preventDefault(); onNavigate("lokasi"); }}>Kunjungi Kami</a>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/maskot/ozzy-marah.png" alt="Ozzy" className="hero-mascot" />
+          {/* Mascot hero: lazy ok karena bukan LCP element */}
+          <Image
+            src="/maskot/ozzy-marah.png"
+            alt="Ozzy maskot Kedai Atap"
+            width={220}
+            height={280}
+            className="hero-mascot"
+            loading="lazy"
+            style={{ width: "clamp(100px, 18%, 220px)", height: "auto" }}
+          />
         </div>
         <div className="h-right" style={{ position: "relative", overflow: "hidden" }}>
           <div className="h-img">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/photos/home1.webp" alt="Interior Kedai Atap" loading="eager" />
+            {/* LCP Element: priority=true agar browser preload segera, sizes sesuai layout 45vw */}
+            <Image
+              src="/photos/home1.webp"
+              alt="Interior Kedai Atap"
+              fill
+              priority
+              sizes="(max-width: 900px) 100vw, 45vw"
+              style={{ objectFit: "cover", objectPosition: "center top", filter: "contrast(1.1) saturate(0.9)" }}
+            />
           </div>
           <div className="h-bar">
             <div className="h-cell">
@@ -99,9 +121,15 @@ function SectionHome({ onNavigate }: { onNavigate: (p: string) => void }) {
           <p>Kami percaya bahwa café yang baik adalah yang tumbuh bersama komunitasnya. Ruang kami dirancang untuk pekerjaan, kolaborasi, dan percakapan yang bermakna — bukan sekadar konten untuk story.</p>
           <a href="#kolaborasi" className="btn btn-yel" onClick={(e) => { e.preventDefault(); onNavigate("kolaborasi"); }}>Open Collaboration →</a>
         </div>
-        <div className="f-img">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/photos/home2.webp" alt="Suasana Kedai Atap" loading="lazy" />
+        <div className="f-img" style={{ position: "relative" }}>
+          <Image
+            src="/photos/home2.webp"
+            alt="Suasana Kedai Atap"
+            fill
+            loading="lazy"
+            sizes="(max-width: 900px) 100vw, 50vw"
+            style={{ objectFit: "cover", objectPosition: "center", filter: "grayscale(15%)" }}
+          />
         </div>
       </div>
     </>
@@ -135,8 +163,15 @@ function SectionMenu() {
           <p className="eyebrow">// Apa yang kami sajikan</p>
           <div style={{ display: "flex", alignItems: "flex-end", gap: "1.5rem" }}>
             <h2 className="dtitle">MENU<br />LENGKAP</h2>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={MENU_MASCOT_POSES[menuMascotPose]} alt="Garabot" className="menu-title-mascot" style={{ opacity: mascotOpacity, transition: "opacity 0.15s" }} />
+            <Image
+              src={MENU_MASCOT_POSES[menuMascotPose]}
+              alt="Garabot maskot menu"
+              width={130}
+              height={130}
+              className="menu-title-mascot"
+              loading="lazy"
+              style={{ opacity: mascotOpacity, transition: "opacity 0.15s", height: "auto", width: "clamp(80px, 10vw, 130px)" }}
+            />
           </div>
         </div>
       </div>
@@ -323,8 +358,15 @@ function SectionKontak() {
           <p>Punya pertanyaan soal menu, reservasi, atau sekadar ingin tahu jam buka? Kami selalu siap membalas dengan cepat.</p>
         </div>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/maskot/garabot-wave.png" alt="Garabot" className="kon-mascot" />
+          <Image
+            src="/maskot/garabot-wave.png"
+            alt="Garabot maskot kontak"
+            width={140}
+            height={140}
+            className="kon-mascot"
+            loading="lazy"
+            style={{ width: "clamp(80px, 12vw, 140px)", height: "auto" }}
+          />
           <div className="kon-btns">
             <a href="https://wa.me/6282282746298?text=Halo%20Kopi%20Brutal!" target="_blank" rel="noopener noreferrer" className="btn" style={{ background: "#25D366", borderColor: "var(--black)", color: "var(--black)", justifyContent: "center", padding: "1.1rem 2rem" }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.558 4.143 1.538 5.883L.057 23.321a.75.75 0 0 0 .92.92l5.438-1.481A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.956 9.956 0 0 1-5.206-1.463l-.374-.222-3.876 1.056 1.056-3.876-.222-.374A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -385,8 +427,15 @@ function SectionKolaborasi() {
     <>
       <div className="kol-hero">
         <div className="kol-bg">KOLABORASI KOLABORASI KOLABORASI KOLABORASI</div>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/maskot/ozzy-cute.png" alt="Ozzy" className="kol-mascot" />
+        <Image
+          src="/maskot/ozzy-cute.png"
+          alt="Ozzy maskot kolaborasi"
+          width={200}
+          height={250}
+          className="kol-mascot"
+          loading="lazy"
+          style={{ width: "clamp(80px, 14vw, 200px)", height: "auto" }}
+        />
         <div className="kol-content">
           <p className="eyebrow" style={{ color: "#D7792B" }}>// Open Collaboration</p>
           <h2 className="dtitle">BANGUN<br />SESUATU<br />BERSAMA.</h2>
@@ -479,9 +528,15 @@ function SectionArtikel({ openArticle, setOpenArticle }: { openArticle: Article 
           <div style={{ padding: "3rem", textAlign: "center", fontSize: "0.9rem", color: "#888" }}>Belum ada artikel di kategori ini.</div>
         ) : filtered.map((a) => (
           <div key={a.id} className="art-card" onClick={() => setOpenArticle(a)} tabIndex={0} role="button" aria-label={`Baca artikel: ${a.judul}`} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") setOpenArticle(a); }}>
-            <div className="art-card-img">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={a.gambar} alt={a.judul} loading="lazy" />
+            <div className="art-card-img" style={{ position: "relative" }}>
+              <Image
+                src={a.gambar}
+                alt={a.judul}
+                fill
+                loading="lazy"
+                sizes="(max-width: 900px) 100vw, 33vw"
+                style={{ objectFit: "cover" }}
+              />
             </div>
             <div className="art-card-body">
               <div className="art-card-meta">
@@ -576,9 +631,15 @@ export default function HomePage() {
           <div className="art-detail">
             <button className="art-close" onClick={() => setOpenArticle(null)} aria-label="Tutup artikel">✕</button>
             <div className="art-detail-inner">
-              <div className="art-detail-banner">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={openArticle.gambar} alt={openArticle.judul} />
+              <div className="art-detail-banner" style={{ position: "relative" }}>
+                <Image
+                  src={openArticle.gambar}
+                  alt={openArticle.judul}
+                  fill
+                  loading="lazy"
+                  sizes="760px"
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <div className="art-detail-content">
                 <div className="art-detail-meta">

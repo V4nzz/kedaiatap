@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Image from "next/image";
 
 const poses = ["/maskot/ozzy-wave.png", "/maskot/ozzy-cute.png", "/maskot/ozzy-ngantuk.png"];
 
@@ -26,12 +27,14 @@ export default function FloatingMascot() {
       onMouseEnter={handleMouseEnter}
       title="Scroll ke atas"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         id="float-img"
         src={poses[poseIdx]}
-        alt="Ozzy"
-        style={{ opacity, transition: "opacity 0.15s" }}
+        alt="Ozzy maskot"
+        width={90}
+        height={110}
+        priority={false}
+        style={{ opacity, transition: "opacity 0.15s", width: "90px", height: "auto" }}
       />
     </div>
   );

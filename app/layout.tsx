@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+
+// next/font otomatis self-host, non-blocking, dan gunakan font-display: swap
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-poppins",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: "KEDAI ATAP — Café & Ruang Kolaborasi Bandar Lampung",
@@ -13,12 +23,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
+    <html lang="id" className={poppins.variable}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* Preload font lokal New Year Coffee untuk rendering cepat */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          href="/fonts/NewYearCoffee.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
+        {/* Preload hero image LCP utama */}
+        <link
+          rel="preload"
+          href="/photos/home1.webp"
+          as="image"
+          type="image/webp"
         />
       </head>
       <body>{children}</body>
