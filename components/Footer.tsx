@@ -1,3 +1,4 @@
+import Image from "next/image";
 import NavLogoSVG from "./NavLogoSVG";
 
 interface FooterProps {
@@ -10,10 +11,16 @@ export default function Footer({ onNavigate }: FooterProps) {
       <div className="ft-col">
         <div style={{ display: "flex", alignItems: "flex-end", gap: "1rem", marginBottom: "0.5rem" }}>
           <span className="footer-logo-img" role="img" aria-label="Kedai Atap">
-            <NavLogoSVG color="#D7792B" />
+            <NavLogoSVG color="#F3F3F0" />
           </span>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/maskot/garabot-senyum.png" alt="Garabot" className="footer-mascot" />
+          <Image
+            src="/maskot/garabot-senyum.png"
+            alt="Garabot"
+            width={60}
+            height={60}
+            className="footer-mascot"
+            style={{ height: "auto" }}
+          />
         </div>
         <div className="ft-sub">Kedaton · Bandar Lampung · Since 2024</div>
         <div className="ft-copy">© {new Date().getFullYear()} Kedai Atap. All rights reserved.</div>

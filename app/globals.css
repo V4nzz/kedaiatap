@@ -453,8 +453,8 @@ footer { background: var(--black); border-top: var(--border); display: grid; gri
 .ft-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
 .ft-links a { font-size: 0.82rem; color: #4E5861; transition: color var(--ease); cursor: none; }
 .ft-links a:hover { color: var(--yellow); }
-.footer-logo-img { display: block; margin-bottom: 0.4rem; }
-.footer-logo-img svg { height: 60px; width: auto; display: block; }
+.footer-logo-img { display: block; margin-bottom: 0.4rem; flex-shrink: 0; }
+.footer-logo-img svg { height: 60px; width: auto; display: block; overflow: visible; }
 .footer-mascot { width: 60px; height: auto; margin-bottom: 0.4rem; flex-shrink: 0; animation: footer-wiggle 4s ease-in-out infinite; filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.3)); }
 
 /* ── FLOATING MASCOT ── */
